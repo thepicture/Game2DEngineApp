@@ -42,6 +42,20 @@ namespace Game2DEngineApp
         {
         }
     }
+    class Player : GameObject
+    {
+        public Player(double x, double y, BitmapImage sprite) : base(x, y, sprite)
+        {
+        }
+        public void Move(double x, double y, double angle)
+        {
+
+        }
+        public void Jump()
+        {
+
+        }
+    }
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
