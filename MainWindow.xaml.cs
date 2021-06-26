@@ -27,6 +27,20 @@ namespace Game2DEngineApp
             this.y = y;
             this.sprite = sprite;
         }
+        public void ChangeSprite(BitmapImage sprite)
+        {
+            this.sprite = sprite;
+        }
+        public void Move(double x, double y)
+        {
+            throw new NotImplementedException();
+        }
+    }
+    class Obstacle : GameObject
+    {
+        public Obstacle(double x, double y, BitmapImage sprite) : base(x, y, sprite)
+        {
+        }
     }
     /// <summary>
     /// Interaction logic for MainWindow.xaml
