@@ -10,11 +10,11 @@ namespace Game2DEngineApp
         private double y;
         private BitmapImage sprite;
 
-        public GameObject(double x, double y, BitmapImage sprite)
+        public GameObject(double x, double y, string sprite)
         {
             this.x = x;
             this.y = y;
-            this.sprite = sprite;
+            this.sprite = new BitmapImage(new Uri(sprite));
         }
         public void ChangeSprite(BitmapImage sprite)
         {
@@ -27,21 +27,22 @@ namespace Game2DEngineApp
     }
     class Wall : GameObject
     {
-        public Wall(double x, double y, BitmapImage sprite) : base(x, y, sprite)
+        public Wall(double x, double y, string sprite) : base(x, y, sprite)
         {
         }
     }
     class Obstacle : Wall
     {
-        public Obstacle(double x, double y, BitmapImage sprite) : base(x, y, sprite)
+        public Obstacle(double x, double y, string sprite) : base(x, y, sprite)
         {
         }
     }
     class Player : GameObject
     {
-        public Player(double x, double y, BitmapImage sprite) : base(x, y, sprite)
+        public Player(double x, double y, string sprite) : base(x, y, sprite)
         {
         }
+
         public void Move(double x, double y, double angle)
         {
 
@@ -59,6 +60,7 @@ namespace Game2DEngineApp
         public MainWindow()
         {
             InitializeComponent();
+            Wall wall = new Wall(20, 20, "wall_1.png");
         }
     }
 }
